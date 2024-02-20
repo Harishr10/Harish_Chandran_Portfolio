@@ -409,36 +409,35 @@ ul {
   
   @media (min-width: 40rem) {
     .timeline-design {
-      grid-template-columns: 1fr var(--line-w) 1fr;
+        grid-template-columns: minmax(auto, 1fr) var(--line-w) minmax(auto, 1fr); /* Spalten mit dynamischer Breite */
     }
-    .timeline-design::before {
-      grid-column: 2;
-    }
-    .timeline-design li:nth-child(odd) {
-      grid-column: 1;
-    }
-    .timeline-design li:nth-child(even) {
-      grid-column: 3;
-    }
-  
-    /* start second card */
+
     .timeline-design li:nth-child(2) {
-      grid-row: 2/4;
+        grid-row: 2/4;
     }
-  
+
     .timeline-design li:nth-child(odd) .date::before {
-      clip-path: polygon(0 0, 100% 0, 100% 100%);
-      left: 0;
+        clip-path: polygon(0 0, 100% 0, 100% 100%);
+        left: 0;
     }
-  
+
     .timeline-design li:nth-child(odd) .date::after {
-      transform: translate(-50%, -50%);
-      left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+        transform: translate(-50%, -50%);
+        left: calc(100% + var(--col-gap) + var(--line-w) / 2);
     }
+
     .timeline-design li:nth-child(odd) .date {
-      border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+        border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
     }
-  }
+
+    /* Textgröße anpassen */
+    .timeline-design li .date,
+    .timeline-design li .title,
+    .timeline-design li .descr {
+        font-size: 0.9rem; /* Beispiel für eine angepasste Textgröße */
+    }
+}
+
   
   .credits {
     margin-top: 1rem;
