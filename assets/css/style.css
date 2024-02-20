@@ -475,6 +475,15 @@ ul {
         line-height: 60px;
         font-size: 25px;
       }
+      .timeline-design li .date {
+        --dateH: 2rem;
+      }
+      .timeline-design li .title {
+        font-size: medium;
+    }
+    .timeline-design li .descr {
+      font-size: small;
+  }
 }
 
 
